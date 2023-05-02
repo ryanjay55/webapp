@@ -1,0 +1,40 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% load static tailwind_tags %}
+{% block title %}
+  About
+{% endblock title %}
+{% tailwind_css %}
+
+
+{% block content %}
+<div class="flex h-screen">
+    <div class="sidebar w-[300px]">
+        {% include "portfolio/sidebar.html" %}
+    </div>
+  
+    <div class="flex-grow">
+      <div class="flex flex-col md:flex-row">
+        <div class="md:w-1/2 flex justify-center items-center">
+            <img src="{% static 'assets/icons/coding.svg' %}" alt="coding icon" class="w-[350px] ml-[160px]">
+        </div>
+        <div class="md:w-1/2 p-4 border-l-2 h-screen flex flex-col justify-center">
+            <div class="flex mt-[50px] ml-4 mb-6">
+               <h1 class="font-bold text-4xl" >About Me</h1>
+            </div>
+            <div>
+                <p class="indent-8 text-justify ml-4 mr-2 tracking-wide leading-8">Hi there! My name is Ryan Jay D. Antonio and I am a third-year college student pursuing a degree in BSIT at Pamantasan ng Lungsod ng Valenzuela. I am passionate about technology and its ability to transform businesses and individuals. I am currently looking for an internship opportunity that will allow me to gain valuable industry experience and apply my skills and knowledge in a practical setting. With my strong work ethic, dedication, and eagerness to learn, I am confident that I can contribute positively to any team I am a part of. Thank you for considering my application.</p>
+            </div>
+            <div class="mt-[50px] ml-4">
+                <a href="{% static 'assets/pdf/ryanjayresume.pdf' %}" download class="bg-orange-600 w-[200px] h-[50px] rounded-2xl left-0 flex items-center justify-around hover:bg-gray-800 hover:text-orange-600">
+                    <span class="font-semibold text-sm">Download Resume</span> 
+                    <img src="{% static 'assets/icons/download.svg' %}" alt="Portfolio icon" class="w-[20px] ">
+                </a>
+            </div>            
+        </div>
+      </div>
+    </div>
+</div>
+
+
+{% endblock content %}
